@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cafés & Bakeries in Central Paris</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-left">
+      <h1>Cafés & Bakeries</h1>
+      <p class="subtitle">Spatial Distribution in Central Paris, France</p>
+    </div>
+    <div class="header-right">
+      <span class="badge">OpenStreetMap Data · 2026</span>
+    </div>
+  </header>
+
+  <!-- MAIN LAYOUT -->
+  <div class="main-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <!-- FILTER -->
+      <div class="panel">
+        <h2 class="panel-title">Filter</h2>
+        <div class="filter-group">
+          <label class="filter-label">Show:</label>
+          <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="cafe">Café Only</button>
+            <button class="filter-btn" data-filter="bakery">Bakery Only</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- LAYER TOGGLE -->
+      <div class="panel">
+        <h2 class="panel-title">Layers</h2>
+        <div class="toggle-item">
+          <label class="toggle">
+            <input type="checkbox" id="toggle-cafe" checked/>
+            <span class="slider"></span>
+          </label>
+          <span class="toggle-label"><span class="dot cafe-dot"></span>Café</span>
+        </div>
+        <div class="toggle-item">
+          <label class="toggle">
+            <input type="checkbox" id="toggle-bakery" checked/>
+            <span class="slider"></span>
+          </label>
+          <span class="toggle-label"><span class="dot bakery-dot"></span>Bakery & Pastry</span>
+        </div>
+        <div class="toggle-item">
+          <label class="toggle">
+            <input type="checkbox" id="toggle-roads" checked/>
+            <span class="slider"></span>
+          </label>
+          <span class="toggle-label"><span class="line-icon main-road-line"></span>Main Road</span>
+        </div>
+        <div class="toggle-item">
+          <label class="toggle">
+            <input type="checkbox" id="toggle-pedestrian" checked/>
+            <span class="slider"></span>
+          </label>
+          <span class="toggle-label"><span class="line-icon pedestrian-line"></span>Pedestrian Path</span>
+        </div>
+      </div>
+
+      <!-- LEGEND -->
+      <div class="panel">
+        <h2 class="panel-title">Legend</h2>
+        <div class="legend-item"><span class="dot cafe-dot"></span> Café (993)</div>
+        <div class="legend-item"><span class="dot bakery-dot"></span> Bakery & Pastry (390)</div>
+        <div class="legend-item"><span class="line-icon main-road-line"></span> Main Road</div>
+        <div class="legend-item"><span class="line-icon pedestrian-line"></span> Pedestrian Path</div>
+      </div>
+
+      <!-- INFO -->
+      <div class="panel info-panel">
+        <h2 class="panel-title">About</h2>
+        <p>This map shows the spatial distribution of cafés and bakeries across central Paris arrondissements (1–8), based on OpenStreetMap data exported via HOT OSM Export Tool.</p>
+        <p class="credit">Created by: Elga Luisa<br/>Kapita Selekta Sistem Informasi<br/>Universitas Bakrie · 2026</p>
+      </div>
+
+    </aside>
+
+    <!-- MAP -->
+    <div id="map"></div>
+
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
